@@ -36,6 +36,9 @@
                 <div class="menu">
                     <div class="menu-caption">
                         <p>Choose QS report</p>
+                        <div class="Arrow-pos">
+                            <div class="black-Arrow"></div>
+                        </div>
                     </div>
 
                     <ul class="action-list">
@@ -52,6 +55,9 @@
                 <div class="menu">
                     <div class="menu-caption">
                         <p>Choose dashboard</p>
+                        <div class="Arrow-pos">
+                            <div class="black-Arrow"></div>
+                        </div>
                     </div>
 
                     <ul class="action-list">
@@ -69,6 +75,9 @@
                 <div class="menu">
                     <div class="menu-caption">
                         <p>Choose guide</p>
+                        <div class="Arrow-pos">
+                            <div class="black-Arrow"></div>
+                        </div>
                     </div>
 
                     <ul class="action-list">
@@ -88,16 +97,129 @@
                 <li><a href="#public-folders">Public Folders</a></li>
             </ul>
 
-            <div id="quick-reports">
+            <div class="tab" id="quick-reports">
+
+                <div class="icons-bar">
+                    <select id="sites">
+                    </select>
+
+                    <a class="settingLink"></a>
+                    <a class="goToLink"></a>
+                </div>
+
+                <div class="tab-content">
+                    <form class="from-area" action="">
+                        <div class="form-content">
+                            <span>Report 1:</span>
+                            <div class="report-box">
+                                <label for="name1">Name</label>
+                                <input id="name1" type="text" class="name" placeholder="Site name">
+                            </div>
+                            <div class="report-box">
+                                <label for="url1">URL</label>
+                                <input id="url1" type="text" class="url" placeholder="Site URL">
+                            </div>
+                        </div>
+                        <div class="form-content">
+                            <span>Report 2:</span>
+                            <div class="report-box">
+                                <label for="name2">Name</label>
+                                <input id="name2" type="text" class="name" placeholder="Site name">
+                            </div>
+                            <div class="report-box">
+                                <label for="url2">URL</label>
+                                <input id="url2" type="text" class="url" placeholder="Site URL">
+                            </div>
+                        </div>
+                        <div class="form-content">
+                            <span>Report 3:</span>
+                            <div class="report-box">
+                                <label for="name3">Name</label>
+                                <input id="name3" type="text" class="name" placeholder="Site name">
+                            </div>
+                            <div class="report-box">
+                                <label for="url3">URL</label>
+                                <input id="url3" type="text" class="url" placeholder="Site URL">
+                            </div>
+                        </div>
+                        <label class="sub" for="submit-btn">save</label>
+                        <input type="submit" id="submit-btn">
+                        <label class="cancel" for="cancel-btn">Cancel</label>
+                        <input type="checkbox" id="cancel-btn">
+                    </form>
+
+                    <iframe src="" frameborder="0"></iframe>
+                </div>
             </div>
 
-            <div id="my-folders">
+            <div class="tab" id="my-folders">
+                <div class="icons-bar">
+                    <a class="goToLink"></a>
+
+                    <iframe class="iframe-size" src="https://www.bing.com/" frameborder="0"></iframe>
+                </div>
             </div>
 
-            <div id="my-team-folders">
+            <div class="tab" id="my-team-folders">
+                <div class="icons-bar">
+                    <select id="sites2">
+                    </select>
+
+                    <a class="settingLink"></a>
+                    <a class="goToLink"></a>
+                </div>
+
+                <div class="tab-content">
+                    <form class="from-area" action="">
+                        <div class="form-content">
+                            <span>Report 4:</span>
+                            <div class="report-box">
+                                <label for="name4">Name</label>
+                                <input id="name4" type="text" class="name" placeholder="Site name">
+                            </div>
+                            <div class="report-box">
+                                <label for="url4">URL</label>
+                                <input id="url4" type="text" class="url" placeholder="Site URL">
+                            </div>
+                        </div>
+                        <div class="form-content">
+                            <span>Report 5:</span>
+                            <div class="report-box">
+                                <label for="name5">Name</label>
+                                <input id="name5" type="text" class="name" placeholder="Site name">
+                            </div>
+                            <div class="report-box">
+                                <label for="url5">URL</label>
+                                <input id="url5" type="text" class="url" placeholder="Site URL">
+                            </div>
+                        </div>
+                        <div class="form-content">
+                            <span>Report 6:</span>
+                            <div class="report-box">
+                                <label for="name6">Name</label>
+                                <input id="name6" type="text" class="name" placeholder="Site name">
+                            </div>
+                            <div class="report-box">
+                                <label for="url6">URL</label>
+                                <input id="url6" type="text" class="url" placeholder="Site URL">
+                            </div>
+                        </div>
+                        <label class="sub" for="submit-btn2">save</label>
+                        <input type="submit" id="submit-btn2">
+                        <label class="cancel" for="cancel-btn2">Cancel</label>
+                        <input type="checkbox" id="cancel-btn2">
+                    </form>
+
+                    <iframe src="" frameborder="0"></iframe>
+                </div>
             </div>
 
-            <div id="public-folders">
+            <div class="tab" id="public-folders">
+                <div class="icons-bar">
+                    <a class="goToLink"></a>
+
+                    <iframe class="iframe-size" src="http://www.walla.co.il/" frameborder="0"></iframe>
+                </div>
             </div>
         </section>
     </section>
