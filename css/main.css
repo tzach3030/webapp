@@ -82,6 +82,10 @@ textarea {
 }
 
 /* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+/* ==========================================================================
    My Css
    ========================================================================== */
 
@@ -108,6 +112,10 @@ body{
     position: relative;
     width: 100%;
     margin: auto;
+}
+
+input:focus:invalid { /* red border when url is invalid */
+  border: 2px solid red;
 }
 
 /***************************************
@@ -139,6 +147,10 @@ Search
     margin-top: 15px;
 }
 
+.search{
+    display: none;
+}
+
 /***************************************
 Body
 ***************************************/
@@ -154,11 +166,16 @@ Notifications
 ***************************************/
 
 .notifications{
+    font-size: 1.6rem;
+    box-sizing: border-box;
     width: 100%;
-    height: 40px;
+    height: 4rem;
     position: relative;
     background-color: lightgrey;
-    margin-bottom: 20px;
+    margin-bottom: 2rem;
+    padding-top: 1.1rem;
+    padding-left: 2rem;
+    overflow: hidden;
 }
 
 /***************************************
@@ -338,10 +355,6 @@ Tab
 Tool Bar
 ***************************************/
 
-.icons-bar {
-    height: 3.2rem;
-}
-
 .goToLink,
 .settingLink {
     display: inline-block;
@@ -376,7 +389,6 @@ Tab Content
 }
 
 .tab-content iframe {
-    display: none;
     width: 100%;
     height: 50rem;
 }
@@ -386,27 +398,14 @@ Tab Content
     height: 50rem;
 }
 
-#quick-reports:not(:target),
-#my-folders:not(:target),
-#my-team-folders:not(:target),
-#public-folders:not(:target) {
-    display: none;
-}
-
-#quick-reports:target,
-#my-folders:target,
-#my-team-folders:target,
-#public-folders:target {
-    display: block;
-}
-
 /***************************************
 Form
 ***************************************/
 
-.from-area {
+.form-area {
     box-sizing: border-box;
     width: 100%;
+    margin-top: 1rem;
     padding: 1.2rem;
     background-color: white;
     box-shadow: 0 5px 5px 0 grey;
@@ -415,11 +414,11 @@ Form
     left: 0;
 }
 
-.from-area .url-from:first-child {
+.form-area .url-from:first-child {
     margin-top: 0;
 }
 
-.from-area .url-from:last-child {
+.form-area .url-from:last-child {
     margin-bottom: 0;
 }
 
@@ -501,15 +500,9 @@ Cancel Btn
     width: 8rem;
 }
 
-.from-area input[type='submit'], .from-area input[type='checkbox']{
+.form-area input[type='submit'], .form-area input[type='button']{
     display: none;
 }
-
-/* ==========================================================================
-   Author's custom styles
-   ========================================================================== */
-
-
 
 
 

@@ -15,13 +15,14 @@
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
         <script src="js/main.js"></script>
     </head>
-    <body>
+    <body onload="PageLoad()">
         <header>
         <div class="layout-wrap">
             <a href=""><img src="img/logo-netcraft.svg" alt="netcraft"></a>
 
-            <form class="search-box">
-                <input type="search" name="q" placeholder="search">
+            <form onsubmit="SearchReport(event)" class="search-box">
+                <label class="search" for="search">search:</label>
+                <input required type="search" id="search" name="q" placeholder="search">
             </form>
         </div>
     </header>
@@ -91,29 +92,28 @@
 
         <section class="tabs">
             <ul>
-                <li><a href="#quick-reports">Quick Reports</a></li>
-                <li><a href="#my-folders">My Folders</a></li>
-                <li><a href="#my-team-folders">My Team Folders</a></li>
-                <li><a href="#public-folders">Public Folders</a></li>
+                <li><a href="#quick-reports" onclick="SelectTab(event)">Quick Reports</a></li>
+                <li><a href="#my-folders" onclick="SelectTab(event)">My Folders</a></li>
+                <li><a href="#my-team-folders" onclick="SelectTab(event)">My Team Folders</a></li>
+                <li><a href="#public-folders" onclick="SelectTab(event)">Public Folders</a></li>
             </ul>
 
-            <div class="tab" id="quick-reports">
+            <div class="tab tab1" id="quick-reports">
 
-                <div class="icons-bar">
-                    <select id="sites">
-                    </select>
+                <select onchange="SiteSelect('quick-reports')" id="sites">
+                </select>
 
-                    <a class="settingLink"></a>
-                    <a class="goToLink"></a>
-                </div>
+                <a onclick="OpenSetting('quick-reports','name1')" class="settingLink"></a>
+                <a onclick="OpenNewTab('quick-reports')" class="goToLink"></a>
 
-                <div class="tab-content">
-                    <form class="from-area" action="">
+                <div onkeydown="esc(event,'quick-reports')" class="tab-content">
+                    <form onsubmit="return SubmitForm('quick-reports',this)" class="form-area">
                         <div class="form-content">
                             <span>Report 1:</span>
                             <div class="report-box">
                                 <label for="name1">Name</label>
-                                <input id="name1" type="text" class="name" placeholder="Site name">
+                                <input id="name1" type="text" 
+                                class="name" placeholder="Site name">
                             </div>
                             <div class="report-box">
                                 <label for="url1">URL</label>
@@ -145,32 +145,29 @@
                         <label class="sub" for="submit-btn">save</label>
                         <input type="submit" id="submit-btn">
                         <label class="cancel" for="cancel-btn">Cancel</label>
-                        <input type="checkbox" id="cancel-btn">
+                        <input onclick="OpenSetting('quick-reports','name1')" type="button" 
+                        id="cancel-btn" value="Cancel">
                     </form>
 
-                    <iframe src="" frameborder="0"></iframe>
+                    <iframe></iframe>
                 </div>
             </div>
 
-            <div class="tab" id="my-folders">
-                <div class="icons-bar">
-                    <a class="goToLink"></a>
-
-                    <iframe class="iframe-size" src="https://www.bing.com/" frameborder="0"></iframe>
-                </div>
+            <div class="tab tab2" id="my-folders">
+                <a onclick="OpenNewTab('my-folders')" class="goToLink"></a>
+                <iframe class="iframe-size" src="https://www.bing.com/"></iframe>
             </div>
 
-            <div class="tab" id="my-team-folders">
-                <div class="icons-bar">
-                    <select id="sites2">
-                    </select>
+            <div class="tab tab3" id="my-team-folders">
 
-                    <a class="settingLink"></a>
-                    <a class="goToLink"></a>
-                </div>
+                <select onchange="SiteSelect('my-team-folders')" id="sites2">
+                </select>
 
-                <div class="tab-content">
-                    <form class="from-area" action="">
+                <a onclick="OpenSetting('my-team-folders','name4')" class="settingLink"></a>
+                <a onclick="OpenNewTab('my-team-folders')" class="goToLink"></a>
+
+                <div onkeydown="esc(event,'my-team-folders')" class="tab-content">
+                    <form onsubmit="return SubmitForm('my-team-folders',this)" class="form-area">
                         <div class="form-content">
                             <span>Report 4:</span>
                             <div class="report-box">
@@ -179,7 +176,7 @@
                             </div>
                             <div class="report-box">
                                 <label for="url4">URL</label>
-                                <input id="url4" type="text" class="url" placeholder="Site URL">
+                                <input id="url4" type="url" class="url" placeholder="Site URL">
                             </div>
                         </div>
                         <div class="form-content">
@@ -190,7 +187,7 @@
                             </div>
                             <div class="report-box">
                                 <label for="url5">URL</label>
-                                <input id="url5" type="text" class="url" placeholder="Site URL">
+                                <input id="url5" type="url" class="url" placeholder="Site URL">
                             </div>
                         </div>
                         <div class="form-content">
@@ -201,42 +198,28 @@
                             </div>
                             <div class="report-box">
                                 <label for="url6">URL</label>
-                                <input id="url6" type="text" class="url" placeholder="Site URL">
+                                <input id="url6" type="url" class="url" placeholder="Site URL">
                             </div>
                         </div>
                         <label class="sub" for="submit-btn2">save</label>
                         <input type="submit" id="submit-btn2">
                         <label class="cancel" for="cancel-btn2">Cancel</label>
-                        <input type="checkbox" id="cancel-btn2">
+                        <input onclick="OpenSetting('my-team-folders','name4')" type="button" 
+                        id="cancel-btn2" value="Cancel">
                     </form>
 
-                    <iframe src="" frameborder="0"></iframe>
+                    <iframe></iframe>
                 </div>
             </div>
 
-            <div class="tab" id="public-folders">
-                <div class="icons-bar">
-                    <a class="goToLink"></a>
-
-                    <iframe class="iframe-size" src="http://www.walla.co.il/" frameborder="0"></iframe>
-                </div>
+            <div class="tab tab4" id="public-folders">
+                <a onclick="OpenNewTab('public-folders')" class="goToLink"></a>
+                <iframe class="iframe-size" src="http://www.walla.co.il/"></iframe>
             </div>
         </section>
     </section>
         
-
-        <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
         <script src="js/plugins.js"></script>
 
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
-            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-            e.src='https://www.google-analytics.com/analytics.js';
-            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-            ga('create','UA-XXXXX-X','auto');ga('send','pageview');
-        </script>
     </body>
 </html>
